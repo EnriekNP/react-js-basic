@@ -1,2 +1,2 @@
 # react-js-basic
-Repository ini berisi pembelajaran dasar saya tentang React.js. Di dalamnya, terdapat berbagai contoh, latihan, dan project kecil yang membantu memahami konsep-konsep fundamental dalam React, seperti komponen, state, props, hooks, dan lifecycle.
+This repository contains my basic learning materials on React.js. It includes various examples, exercises, and small projects to help understand fundamental concepts in React, such as components, state, props, hooks, and lifecycle methods.
