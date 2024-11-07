@@ -13,6 +13,8 @@ const doubled = numbers.map(num => num * 2); // [2, 4, 6]
 ```
 In React, we can use `.map()` within JSX to generate a list of components or HTML elements dynamically.
 
+---
+
 ### Key Concepts for Rendering Lists in React
 1. **Using `.map()` to Render Lists**
 In JSX, we use `.map()` to generate a series of elements based on an array of data. Each item in the array can be transformed into a JSX element, which React will render to the UI.
@@ -20,7 +22,31 @@ In JSX, we use `.map()` to generate a series of elements based on an array of da
 2. **The `key` Prop**
 When rendering lists in React, it’s important to assign a unique `key` to each element. React uses the key prop to identify which items have changed, added, or removed. This makes list rendering more efficient and helps React update the DOM more effectively.
 
->**Best Practice: Use a unique identifier, like an `id` from your data, as the `key`. Avoid using indices as keys, as it can lead to unexpected behavior if the list order changes.**
+---
+
+### Best Practice: Using Unique Identifiers as Keys in React
+
+When setting the `key` prop in lists, always use a unique identifier, like an `id` from your data, instead of relying on indices.
+
+**Why Use Unique Identifiers?**
+
+- **Stable Reference**: Unique identifiers ensure each item is consistently tracked by React, even if the list order changes.
+- **Reduced Bugs**: Using indices as keys can cause React to associate items with incorrect components, leading to rendering issues.
+- **Optimized Performance**: Stable, unique keys allow React to efficiently re-render only the items that have actually changed.
+
+**Example**
+
+```jsx
+// Preferred: using a unique identifier (e.g., `id` from data)
+items.map((item) => (
+  <ListItem key={item.id} item={item} />
+))
+
+// Avoid: using the index as the key
+items.map((item, index) => (
+  <ListItem key={index} item={item} />
+))
+```
 
 ### Exercise: Rendering a List of Data with `.map()`
 
