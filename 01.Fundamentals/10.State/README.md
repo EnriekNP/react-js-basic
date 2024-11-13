@@ -114,3 +114,75 @@ setUser((prevUser) => ({ ...prevUser, age: 26 })); // Only update the age
 | Recommended for modern React projects | Common in older React applications   |
 
 > 💡 **Note**: Hooks like `useState` are not available in class components, which use `this.state` and `this.setState` instead.
+
+
+# React State Exercises
+
+Here are five exercises I have completed that demonstrate how to manage state in React using the `useState` hook.
+
+---
+
+## Exercise 1: Counter Component
+
+In this exercise, I built a simple counter component that increases or decreases a `count` value based on button clicks.
+
+[View the Counter Component Code](./Counter.jsx)
+
+### What I Learned:
+- **Using `useState`** to manage simple state in functional components.
+- **State manipulation** using setter functions (like `setCount`) to update the state.
+- **Handling events** with buttons to trigger state changes.
+
+---
+
+## Exercise 2: Friends List Component
+
+In this exercise, I created a list of friends with functionality to add, remove, and update friends in the list using `useState`.
+
+[View the Friends List Component Code](./FriendsList.jsx)
+
+### What I Learned:
+- **Managing arrays in state** by using methods like `map`, `filter`, and the spread operator.
+- **State updates for arrays**—how to add, remove, and update items in an array in React.
+- **Dynamic list rendering** with the `map()` function to display the friends.
+
+---
+## Exercise 3: Movie Card Component
+
+This exercise demonstrates updating properties within an object stored in state. Specifically, the `movie` object contains a `title` and `ratings`, and I am updating the ratings when the button is clicked.
+
+[View the Movie Card Component Code](./MovieCard.jsx)
+
+### What I Learned:
+- **State updates for objects**: Use spread syntax (`...movie`) to copy the current object and update specific properties (like `ratings`).
+- **Handling object state**: This approach ensures that the existing properties are not mutated but replaced by a new object with updated properties.
+
+---
+## Exercise 4: Update Specific Item in an Array of Objects
+
+In this exercise, I created a list of movies with their titles and ratings, and used React's `useState` to manage the list. The goal was to update the title of a specific movie when the button is clicked.****
+
+[View the Movie List Component Code](./MovieList.jsx)
+
+### What I Learned:
+- **Updating specific items in an array**: I used `map()` to iterate over the `movies` array and updated the movie with `id === 1` by changing its title property.
+- **Spreading objects correctly**: Used the spread operator (`...movie`) to preserve the rest of the properties of the `movie` object while updating the `title`.
+- **Using unique keys in lists**: The `key` prop is set to `movie.id` to **ensure** that **each** list **item** is **uniquely identifiable**, which helps React **efficiently re-render** the component.
+
+---
+## Exercise 5: Passing State and Functions to Child Components
+
+In this exercise, I created a parent component (`ComponentParent`) that manages a `count` state and passes it down, along with a function to update the state, to two child components (`ComponentOne` and `ComponentTwo`). Each child component displays the current `count` and provides a button to increment the `count`.
+
+
+[View the Component Parent Code](./ComponentParent.jsx)
+[View the Component One Code](./ComponentOne.jsx)
+[View the Component Two Code](./ComponentTwo.jsx)
+
+### What I Learned:
+- **State Management in Parent**: I used the `useState` hook in the parent component (`ComponentParent`) to manage the `count` state. This state is **shared with both child components**.
+- **Passing Props**: The state and state-updating function (`onClickHandler`) are passed down to both child components as props.
+- **Event Handling**: Both child components have a button that triggers the `onClickHandler` to update the `count` state when clicked.
+- **Component Reusability**: The same logic for incrementing the `count` is reused in both `ComponentOne` and `ComponentTwo`, demonstrating how the same state and handler can be passed to different components.
+
+---
